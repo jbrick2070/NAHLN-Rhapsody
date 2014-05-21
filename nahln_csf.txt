@@ -1,0 +1,1663 @@
+//////////////////////////////////////////////
+//	TYPE DEFINITIONS
+//////////////////////////////////////////////
+
+namespace Input
+{
+	type message = struct
+	{
+		optional LocalComplex#1 accession_header;
+	};
+
+	type LocalComplex#1 = struct
+	{
+		optional InFields::StringField DATE_KEY;
+		optional InFields::StringField FINALIZED_DATE;
+		optional InFields::StringField CASE_COORDINATOR_ID;
+		optional InFields::StringField RECEIVED_DATE;
+		optional InFields::StringField ACCESSION_ID;
+		optional LocalSimpleContent#1 ACC_REF_NO;
+		optional InFields::StringField ACCESSION_NO;
+		optional LocalComplex#2 case_coordinator;
+		optional LocalComplex#3 submitter_information;
+		optional LocalComplex#4 client_information;
+		optional LocalComplex#6[] patients;
+	};
+
+	type LocalSimpleContent#1 = struct
+	{
+		optional string null$;
+		optional string #PCDATA;
+	};
+
+	type LocalComplex#2 = struct
+	{
+		optional InFields::StringField FIRST_NAME;
+		optional LocalSimpleContent#2 MIDDLE_NAME;
+		optional InFields::StringField EMP_ID;
+		optional InFields::StringField LAST_NAME;
+	};
+
+	type LocalSimpleContent#2 = struct
+	{
+		optional string null$;
+		optional string #PCDATA;
+	};
+
+	type LocalComplex#3 = struct
+	{
+		optional InFields::StringField SUBMITTER_LAST_NAME;
+		optional InFields::StringField SUBMITTER_FIRST_NAME;
+		optional InFields::StringField SUBMITTER_MIDDLE_NAME;
+		optional InFields::StringField SUBMITTER_TITLE;
+	};
+
+	type LocalComplex#4 = struct
+	{
+		optional InFields::StringField ZIP;
+		optional InFields::StringField CITY_NAME;
+		optional InFields::StringField BUSINESS_FARM_NAME;
+		optional InFields::StringField BILL_YN;
+		optional InFields::StringField STATE;
+		optional InFields::StringField ADDR_TYPE;
+		optional InFields::StringField TYPE_CONTACT;
+		optional LocalSimpleContent#3 COUNTRY_NAME;
+		optional InFields::StringField FIRST_NAME;
+		optional InFields::StringField TITLE;
+		optional InFields::StringField ADDR_LN2;
+		optional InFields::StringField ADDR_LN1;
+		optional InFields::StringField ACCESSION_CONTACT_ID;
+		optional InFields::StringField LAST_NAME;
+		optional InFields::StringField CLIENT_ID;
+		optional LocalComplex#5[] client_phone;
+	};
+
+	type LocalSimpleContent#3 = struct
+	{
+		optional string null$;
+		optional string #PCDATA;
+	};
+
+	type LocalComplex#5 = struct
+	{
+		optional InFields::StringField CONTACT_TYPE;
+		optional InFields::StringField CONTACT_VALUE;
+	};
+
+	type LocalComplex#6 = struct
+	{
+		optional LocalSimpleContent#4 STATUS_CODE;
+		optional InFields::StringField BREED;
+		optional LocalSimpleContent#5 REF_CASE_NO;
+		optional LocalSimpleContent#6 SEX;
+		optional LocalSimpleContent#7 SPECIES_SNOMED;
+		optional InFields::StringField SPECIES;
+		optional LocalSimpleContent#8 SEX_SNOMED;
+		optional InFields::StringField BREED_SNOMED;
+		optional InFields::StringField PATIENT_ID;
+		optional InFields::StringField ACCESSION_ID;
+		optional InFields::StringField ANIMAL_ID;
+		optional LocalComplex#7 specimen_information;
+	};
+
+	type LocalSimpleContent#4 = struct
+	{
+		optional string null$;
+		optional string #PCDATA;
+	};
+
+	type LocalSimpleContent#5 = struct
+	{
+		optional string null$;
+		optional string #PCDATA;
+	};
+
+	type LocalSimpleContent#6 = struct
+	{
+		optional string null$;
+		optional string #PCDATA;
+	};
+
+	type LocalSimpleContent#7 = struct
+	{
+		optional string null$;
+		optional string #PCDATA;
+	};
+
+	type LocalSimpleContent#8 = struct
+	{
+		optional string null$;
+		optional string #PCDATA;
+	};
+
+	type LocalComplex#7 = struct
+	{
+		optional InFields::StringField SAMPLED_DATE;
+		optional InFields::StringField SPECIMEN_ID;
+		optional InFields::StringField DESCRIPTION;
+		optional InFields::StringField SPECIMEN_CODE;
+		optional InFields::StringField TEST_TUBE_NO;
+		optional InFields::StringField PATIENT_ID;
+		optional InFields::StringField SPECIMEN_SNOMED;
+		optional InFields::StringField ANIMAL_ID;
+		optional LocalComplex#8 tests;
+	};
+
+	type LocalComplex#8 = struct
+	{
+		optional InFields::StringField SPECIMEN_ID;
+		optional InFields::StringField STATUS_CODE;
+		optional InFields::StringField STANDARD_CODE;
+		optional InFields::StringField TEST_CODE;
+		optional InFields::StringField DESCRIPTION;
+		optional InFields::StringField SECTION_ID;
+		optional InFields::StringField TEST_ID;
+		optional InFields::StringField SECTION_NAME;
+		optional LocalComplex#9[] observations;
+	};
+
+	type LocalComplex#9 = struct
+	{
+		optional InFields::StringField RESULT_TYPE;
+		optional LocalSimpleContent#9 STANDARD_CODE;
+		optional InFields::StringField RESULT_NAME;
+		optional InFields::StringField TEST_CODE;
+		optional InFields::StringField RESULT_ID;
+		optional LocalSimpleContent#10 RESULT_VALUE;
+		optional InFields::StringField DESCRIPTION;
+		optional InFields::StringField RESULT_SEQ;
+		optional InFields::StringField TEST_CODE_ID;
+		optional InFields::StringField RESULT_STATUS;
+	};
+
+	type LocalSimpleContent#9 = struct
+	{
+		optional string null$;
+		optional string #PCDATA;
+	};
+
+	type LocalSimpleContent#10 = struct
+	{
+		optional string null$;
+		optional string #PCDATA;
+	};
+
+
+}
+
+
+
+namespace InFields
+{
+	type StringField = struct
+	{
+		optional string #PCDATA;
+	};
+
+	type IntegerField = struct
+	{
+		optional int #PCDATA;
+	};
+
+	type DoubleField = struct
+	{
+		optional double #PCDATA;
+	};
+
+	type BooleanField = struct
+	{
+		optional boolean #PCDATA;
+	};
+
+	type BinaryField = struct
+	{
+		optional binary #PCDATA;
+	};
+
+
+}
+
+
+
+namespace InXML
+{
+	type Element = struct
+	{
+		string name;
+		optional string xmlns;
+		optional Attribute[] attributes;
+		optional Node[] children;
+	};
+
+	type Attribute = struct
+	{
+		string name;
+		optional string xmlns;
+		string value;
+	};
+
+	type Node = variant
+	{
+		Element element;
+		string text;
+		string cdata;
+		string comment;
+		string processingInstruction;
+	};
+
+	type Namespaces = struct
+	{
+		optional Namespace[] namespaces;
+	};
+
+	type Namespace = struct
+	{
+		string prefix;
+		string xmlns;
+	};
+
+
+}
+
+
+
+namespace Output
+{
+	type OPU_R25 = struct
+	{
+		LocalComplex#1 MSH;
+		LocalComplex#10 PV1;
+		optional VISIT^OBX[] OBX;
+		optional LocalComplex#18[] ROL;
+		LocalComplex#29[] OPU_R25^ACCESSION_DETAIL;
+	};
+
+	type LocalComplex#1 = struct
+	{
+		OutFields::StringField MSH^1;
+		OutFields::StringField MSH^2;
+		optional LocalComplex#2 MSH^3;
+		LocalComplex#3 MSH^4;
+		optional LocalComplex#4 MSH^5;
+		optional LocalComplex#5 MSH^6;
+		OutFields::StringField MSH^7;
+		LocalComplex#6 MSH^9;
+		OutFields::StringField MSH^10;
+		LocalComplex#7 MSH^11;
+		LocalComplex#8 MSH^12;
+		LocalComplex#9 MSH^21;
+	};
+
+	type LocalComplex#2 = struct
+	{
+		OutFields::StringField HD^1;
+		OutFields::StringField HD^2;
+		OutFields::StringField HD^3;
+	};
+
+	type LocalComplex#3 = struct
+	{
+		OutFields::StringField HD^1;
+		OutFields::StringField HD^2;
+		OutFields::StringField HD^3;
+	};
+
+	type LocalComplex#4 = struct
+	{
+		OutFields::StringField HD^1;
+		OutFields::StringField HD^2;
+		OutFields::StringField HD^3;
+	};
+
+	type LocalComplex#5 = struct
+	{
+		OutFields::StringField HD^1;
+		OutFields::StringField HD^2;
+		OutFields::StringField HD^3;
+	};
+
+	type LocalComplex#6 = struct
+	{
+		OutFields::StringField MSG^1;
+		OutFields::StringField MSG^2;
+		OutFields::StringField MSG^3;
+	};
+
+	type LocalComplex#7 = struct
+	{
+		OutFields::StringField PT^1;
+	};
+
+	type LocalComplex#8 = struct
+	{
+		OutFields::StringField VID^1;
+	};
+
+	type LocalComplex#9 = struct
+	{
+		OutFields::StringField EI^1;
+		optional OutFields::StringField EI^3;
+		optional OutFields::StringField EI^4;
+	};
+
+	type LocalComplex#10 = struct
+	{
+		OutFields::StringField PV1^2;
+		optional LocalComplex#11 PV1^7;
+		LocalComplex#14 PV1^19;
+		optional OutFields::StringField PV1^51;
+	};
+
+	type LocalComplex#11 = struct
+	{
+		optional OutFields::StringField XCN^1;
+		LocalComplex#12 XCN^2;
+		optional OutFields::StringField XCN^3;
+		optional OutFields::StringField XCN^4;
+		optional OutFields::StringField XCN^5;
+		optional LocalComplex#13 XCN^9;
+	};
+
+	type LocalComplex#12 = struct
+	{
+		OutFields::StringField FN^1;
+	};
+
+	type LocalComplex#13 = struct
+	{
+		OutFields::StringField HD^2;
+		OutFields::StringField HD^3;
+	};
+
+	type LocalComplex#14 = struct
+	{
+		OutFields::StringField CX^1;
+		LocalComplex#15 CX^4;
+	};
+
+	type LocalComplex#15 = struct
+	{
+		OutFields::StringField HD^2;
+		OutFields::StringField HD^3;
+	};
+
+	type VISIT^OBX = struct
+	{
+		OutFields::StringField OBX^2;
+		LocalComplex#16 OBX^3;
+		LocalComplex#17 OBX^5;
+		OutFields::StringField OBX^11;
+	};
+
+	type LocalComplex#16 = struct
+	{
+		OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+	};
+
+	type LocalComplex#17 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#18 = struct
+	{
+		optional LocalComplex#19 ROL^1;
+		OutFields::StringField ROL^2;
+		LocalComplex#20 ROL^3;
+		LocalComplex#21 ROL^4;
+		optional LocalComplex#24 ROL^11;
+		optional LocalComplex#26[] ROL^12;
+		optional LocalComplex#27 ROL^13;
+	};
+
+	type LocalComplex#19 = struct
+	{
+		OutFields::StringField EI^1;
+		OutFields::StringField EI^3;
+		OutFields::StringField EI^4;
+	};
+
+	type LocalComplex#20 = struct
+	{
+		OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+	};
+
+	type LocalComplex#21 = struct
+	{
+		optional OutFields::StringField XCN^1;
+		LocalComplex#22 XCN^2;
+		optional OutFields::StringField XCN^3;
+		optional OutFields::StringField XCN^4;
+		optional OutFields::StringField XCN^5;
+		optional LocalComplex#23 XCN^9;
+	};
+
+	type LocalComplex#22 = struct
+	{
+		OutFields::StringField FN^1;
+	};
+
+	type LocalComplex#23 = struct
+	{
+		OutFields::StringField HD^2;
+		OutFields::StringField HD^3;
+	};
+
+	type LocalComplex#24 = struct
+	{
+		LocalComplex#25 XAD^1;
+		optional OutFields::StringField XAD^2;
+		OutFields::StringField XAD^3;
+		OutFields::StringField XAD^4;
+		OutFields::StringField XAD^5;
+		optional OutFields::StringField XAD^8;
+	};
+
+	type LocalComplex#25 = struct
+	{
+		OutFields::StringField SAD^1;
+		optional OutFields::StringField SAD^3;
+	};
+
+	type LocalComplex#26 = struct
+	{
+		OutFields::StringField XTN^2;
+		OutFields::StringField XTN^3;
+		optional OutFields::StringField XTN^4;
+		optional OutFields::IntegerField XTN^6;
+		optional OutFields::IntegerField XTN^7;
+		optional OutFields::IntegerField XTN^8;
+		optional OutFields::StringField XTN^12;
+	};
+
+	type LocalComplex#27 = struct
+	{
+		optional OutFields::StringField PL^6;
+		optional OutFields::StringField PL^9;
+		optional LocalComplex#28 PL^10;
+	};
+
+	type LocalComplex#28 = struct
+	{
+		OutFields::StringField EI^1;
+		OutFields::StringField EI^3;
+		OutFields::StringField EI^4;
+	};
+
+	type LocalComplex#29 = struct
+	{
+		LocalComplex#30 NK1;
+		optional LocalComplex#40 OPU_R25^PATIENT;
+		LocalComplex#55[] OPU_R25^SPECIMEN;
+	};
+
+	type LocalComplex#30 = struct
+	{
+		OutFields::IntegerField NK1^1;
+		optional LocalComplex#31 NK1^2;
+		optional LocalComplex#33 NK1^3;
+		optional LocalComplex#34 NK1^4;
+		optional LocalComplex#36[] NK1^5;
+		optional LocalComplex#37[] NK1^6;
+		optional LocalComplex#38 NK1^13;
+		optional LocalComplex#39 NK1^20;
+	};
+
+	type LocalComplex#31 = struct
+	{
+		LocalComplex#32 XPN^1;
+		optional OutFields::StringField XPN^2;
+		optional OutFields::StringField XPN^3;
+		optional OutFields::StringField XPN^4;
+	};
+
+	type LocalComplex#32 = struct
+	{
+		OutFields::StringField FN^1;
+	};
+
+	type LocalComplex#33 = struct
+	{
+		OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+	};
+
+	type LocalComplex#34 = struct
+	{
+		LocalComplex#35 XAD^1;
+		optional OutFields::StringField XAD^2;
+		optional OutFields::StringField XAD^3;
+		optional OutFields::StringField XAD^4;
+		optional OutFields::StringField XAD^5;
+		optional OutFields::StringField XAD^8;
+	};
+
+	type LocalComplex#35 = struct
+	{
+		OutFields::StringField SAD^1;
+		optional OutFields::StringField SAD^3;
+	};
+
+	type LocalComplex#36 = struct
+	{
+		OutFields::StringField XTN^2;
+		OutFields::StringField XTN^3;
+		optional OutFields::StringField XTN^4;
+		optional OutFields::IntegerField XTN^6;
+		optional OutFields::IntegerField XTN^7;
+		optional OutFields::IntegerField XTN^8;
+		optional OutFields::StringField XTN^12;
+	};
+
+	type LocalComplex#37 = struct
+	{
+		OutFields::StringField XTN^2;
+		OutFields::StringField XTN^3;
+		optional OutFields::StringField XTN^4;
+		optional OutFields::IntegerField XTN^6;
+		optional OutFields::IntegerField XTN^7;
+		optional OutFields::IntegerField XTN^8;
+		optional OutFields::StringField XTN^12;
+	};
+
+	type LocalComplex#38 = struct
+	{
+		OutFields::StringField XON^1;
+	};
+
+	type LocalComplex#39 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#40 = struct
+	{
+		LocalComplex#41 PID;
+		optional LocalComplex#51[] OPU_R25^PATIENT_OBSERVATION;
+	};
+
+	type LocalComplex#41 = struct
+	{
+		LocalComplex#42[] PID^3;
+		LocalComplex#44 PID^5;
+		optional OutFields::StringField PID^7;
+		optional OutFields::StringField PID^8;
+		optional LocalComplex#46[] PID^10;
+		optional LocalComplex#47 PID^11;
+		optional OutFields::StringField PID^29;
+		optional OutFields::StringField PID^30;
+		optional OutFields::StringField PID^31;
+		optional LocalComplex#49 PID^35;
+		optional OutFields::StringField PID^37;
+		optional LocalComplex#50 PID^38;
+	};
+
+	type LocalComplex#42 = struct
+	{
+		OutFields::StringField CX^1;
+		optional LocalComplex#43 CX^4;
+		optional OutFields::StringField CX^5;
+	};
+
+	type LocalComplex#43 = struct
+	{
+		optional OutFields::StringField HD^1;
+		optional OutFields::StringField HD^2;
+		optional OutFields::StringField HD^3;
+	};
+
+	type LocalComplex#44 = struct
+	{
+		LocalComplex#45 XPN^1;
+	};
+
+	type LocalComplex#45 = struct
+	{
+		OutFields::StringField FN^1;
+	};
+
+	type LocalComplex#46 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#47 = struct
+	{
+		optional LocalComplex#48 XAD^1;
+		optional OutFields::StringField XAD^2;
+		optional OutFields::StringField XAD^3;
+		optional OutFields::StringField XAD^4;
+		optional OutFields::StringField XAD^5;
+		optional OutFields::StringField XAD^8;
+		optional OutFields::StringField XAD^9;
+	};
+
+	type LocalComplex#48 = struct
+	{
+		OutFields::StringField SAD^1;
+		optional OutFields::StringField SAD^3;
+	};
+
+	type LocalComplex#49 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#50 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#51 = struct
+	{
+		PATIENT^OBX OBX;
+	};
+
+	type PATIENT^OBX = struct
+	{
+		OutFields::StringField OBX^2;
+		LocalComplex#52 OBX^3;
+		LocalComplex#53 OBX^5;
+		optional LocalComplex#54 OBX^6;
+		OutFields::StringField OBX^11;
+	};
+
+	type LocalComplex#52 = struct
+	{
+		OutFields::StringField CWE^1;
+		OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+	};
+
+	type LocalComplex#53 = struct
+	{
+		optional OutFields::StringField SN^1;
+		optional OutFields::StringField SN^2;
+		optional OutFields::StringField SN^3;
+		optional OutFields::StringField SN^4;
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#54 = struct
+	{
+		OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+	};
+
+	type LocalComplex#55 = struct
+	{
+		LocalComplex#56 SPM;
+		optional LocalComplex#74[] OPU_R25^SPECIMEN_OBSERVATION;
+		LocalComplex#76[] OPU_R25^ORDER;
+	};
+
+	type LocalComplex#56 = struct
+	{
+		LocalComplex#57 SPM^2;
+		optional LocalComplex#60[] SPM^3;
+		LocalComplex#63 SPM^4;
+		optional LocalComplex#64[] SPM^6;
+		optional LocalComplex#65 SPM^8;
+		LocalComplex#66 SPM^11;
+		optional OutFields::IntegerField SPM^13;
+		optional OutFields::StringField SPM^14;
+		optional LocalComplex#67 SPM^17;
+		OutFields::StringField SPM^18;
+		optional LocalComplex#68 SPM^21;
+		optional LocalComplex#69 SPM^22;
+		optional LocalComplex#70 SPM^23;
+		optional LocalComplex#71 SPM^24;
+		optional OutFields::IntegerField SPM^26;
+		optional LocalComplex#72 SPM^27;
+		optional LocalComplex#73 SPM^28;
+	};
+
+	type LocalComplex#57 = struct
+	{
+		LocalComplex#58 EIP^1;
+		LocalComplex#59 EIP^2;
+	};
+
+	type LocalComplex#58 = struct
+	{
+		OutFields::StringField EI^1;
+		optional OutFields::StringField EI^2;
+		OutFields::StringField EI^3;
+		OutFields::StringField EI^4;
+	};
+
+	type LocalComplex#59 = struct
+	{
+		OutFields::StringField EI^1;
+		OutFields::StringField EI^3;
+		OutFields::StringField EI^4;
+	};
+
+	type LocalComplex#60 = struct
+	{
+		optional LocalComplex#61 EIP^1;
+		optional LocalComplex#62 EIP^2;
+	};
+
+	type LocalComplex#61 = struct
+	{
+		OutFields::StringField EI^1;
+		optional OutFields::StringField EI^2;
+		optional OutFields::StringField EI^3;
+		optional OutFields::StringField EI^4;
+	};
+
+	type LocalComplex#62 = struct
+	{
+		OutFields::StringField EI^1;
+		OutFields::StringField EI^3;
+		OutFields::StringField EI^4;
+	};
+
+	type LocalComplex#63 = struct
+	{
+		OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#64 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#65 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#66 = struct
+	{
+		OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+	};
+
+	type LocalComplex#67 = struct
+	{
+		OutFields::StringField DR^1;
+	};
+
+	type LocalComplex#68 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#69 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#70 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#71 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#72 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#73 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#74 = struct
+	{
+		SPECIMEN^OBX OBX;
+	};
+
+	type SPECIMEN^OBX = struct
+	{
+		OutFields::StringField OBX^2;
+		LocalComplex#75 OBX^3;
+		OutFields::IntegerField OBX^5;
+		OutFields::StringField OBX^11;
+	};
+
+	type LocalComplex#75 = struct
+	{
+		OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+	};
+
+	type LocalComplex#76 = struct
+	{
+		LocalComplex#77 OBR;
+		LocalComplex#84 ORC;
+		LocalComplex#92 OPU_R25^RESULT;
+	};
+
+	type LocalComplex#77 = struct
+	{
+		optional LocalComplex#78 OBR^2;
+		LocalComplex#79 OBR^3;
+		LocalComplex#80 OBR^4;
+		OutFields::StringField OBR^22;
+		optional LocalComplex#81 OBR^29;
+		optional LocalComplex#83[] OBR^31;
+	};
+
+	type LocalComplex#78 = struct
+	{
+		OutFields::StringField EI^1;
+		optional OutFields::StringField EI^2;
+		optional OutFields::StringField EI^3;
+		optional OutFields::StringField EI^4;
+	};
+
+	type LocalComplex#79 = struct
+	{
+		OutFields::StringField EI^1;
+		OutFields::StringField EI^3;
+		OutFields::StringField EI^4;
+	};
+
+	type LocalComplex#80 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#81 = struct
+	{
+		LocalComplex#82 EIP^2;
+	};
+
+	type LocalComplex#82 = struct
+	{
+		OutFields::StringField EI^1;
+		OutFields::StringField EI^3;
+		OutFields::StringField EI^4;
+	};
+
+	type LocalComplex#83 = struct
+	{
+		optional OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#84 = struct
+	{
+		OutFields::StringField ORC^1;
+		LocalComplex#85 ORC^4;
+		OutFields::StringField ORC^5;
+		optional OutFields::StringField ORC^9;
+		optional LocalComplex#86 ORC^10;
+		optional LocalComplex#89 ORC^11;
+	};
+
+	type LocalComplex#85 = struct
+	{
+		OutFields::StringField EI^1;
+		OutFields::StringField EI^3;
+		OutFields::StringField EI^4;
+	};
+
+	type LocalComplex#86 = struct
+	{
+		optional OutFields::StringField XCN^1;
+		optional LocalComplex#87 XCN^2;
+		optional OutFields::StringField XCN^3;
+		optional OutFields::StringField XCN^4;
+		optional OutFields::StringField XCN^5;
+		optional LocalComplex#88 XCN^9;
+	};
+
+	type LocalComplex#87 = struct
+	{
+		OutFields::StringField FN^1;
+	};
+
+	type LocalComplex#88 = struct
+	{
+		OutFields::StringField HD^2;
+		OutFields::StringField HD^3;
+	};
+
+	type LocalComplex#89 = struct
+	{
+		optional OutFields::StringField XCN^1;
+		optional LocalComplex#90 XCN^2;
+		optional OutFields::StringField XCN^3;
+		optional OutFields::StringField XCN^4;
+		optional OutFields::StringField XCN^5;
+		optional LocalComplex#91 XCN^9;
+	};
+
+	type LocalComplex#90 = struct
+	{
+		OutFields::StringField FN^1;
+	};
+
+	type LocalComplex#91 = struct
+	{
+		OutFields::StringField HD^2;
+		OutFields::StringField HD^3;
+	};
+
+	type LocalComplex#92 = struct
+	{
+		LocalComplex#93 OBX;
+	};
+
+	type LocalComplex#93 = struct
+	{
+		optional OutFields::StringField OBX^2;
+		LocalComplex#94 OBX^3;
+		optional OutFields::StringField OBX^4;
+		optional OutFields::DoubleField OBX^5;
+		optional LocalComplex#95 OBX^6;
+		optional OutFields::StringField OBX^8;
+		OutFields::StringField OBX^11;
+		optional OutFields::StringField OBX^14;
+		optional LocalComplex#96[] OBX^16;
+		optional LocalComplex#99 OBX^17;
+		optional LocalComplex#100[] OBX^18;
+		OutFields::StringField OBX^19;
+	};
+
+	type LocalComplex#94 = struct
+	{
+		OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+	};
+
+	type LocalComplex#95 = struct
+	{
+		OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		OutFields::StringField CWE^3;
+	};
+
+	type LocalComplex#96 = struct
+	{
+		optional OutFields::StringField XCN^1;
+		LocalComplex#97 XCN^2;
+		optional OutFields::StringField XCN^3;
+		optional OutFields::StringField XCN^4;
+		optional OutFields::StringField XCN^5;
+		optional LocalComplex#98 XCN^9;
+	};
+
+	type LocalComplex#97 = struct
+	{
+		OutFields::StringField FN^1;
+	};
+
+	type LocalComplex#98 = struct
+	{
+		OutFields::StringField HD^2;
+		OutFields::StringField HD^3;
+	};
+
+	type LocalComplex#99 = struct
+	{
+		OutFields::StringField CWE^1;
+		optional OutFields::StringField CWE^2;
+		optional OutFields::StringField CWE^3;
+		optional OutFields::StringField CWE^4;
+		optional OutFields::StringField CWE^5;
+		optional OutFields::StringField CWE^6;
+		optional OutFields::StringField CWE^9;
+	};
+
+	type LocalComplex#100 = struct
+	{
+		OutFields::StringField EI^1;
+		OutFields::StringField EI^3;
+		OutFields::StringField EI^4;
+	};
+
+
+}
+
+
+
+namespace OutFields
+{
+	type StringField = struct
+	{
+		optional string #PCDATA;
+	};
+
+	type IntegerField = struct
+	{
+		optional int #PCDATA;
+	};
+
+	type DoubleField = struct
+	{
+		optional double #PCDATA;
+	};
+
+	type BooleanField = struct
+	{
+		optional boolean #PCDATA;
+	};
+
+	type BinaryField = struct
+	{
+		optional binary #PCDATA;
+	};
+
+
+}
+
+
+
+namespace OutXML
+{
+	type Element = struct
+	{
+		string name;
+		optional string xmlns;
+		optional Attribute[] attributes;
+		optional Node[] children;
+	};
+
+	type Attribute = struct
+	{
+		string name;
+		optional string xmlns;
+		string value;
+	};
+
+	type Node = variant
+	{
+		Element element;
+		string text;
+		string cdata;
+		string comment;
+		string processingInstruction;
+	};
+
+	type Namespaces = struct
+	{
+		optional Namespace[] namespaces;
+	};
+
+	type Namespace = struct
+	{
+		string prefix;
+		string xmlns;
+	};
+
+
+}
+
+
+
+//////////////////////////////////////////////
+//	EXTERNAL FUNCTIONS
+//////////////////////////////////////////////
+
+// Retrieves value from registry
+external string GetRegString(  string p1,  string p2,  string p3 ) = "StdFunctions.dll";
+
+// Retrieve the given number of leftmost characters from a string
+external string StrLeft(  string p1,  int p2 ) = "StdFunctions.dll";
+
+// Retrieve the given number of rightmost characters from a string
+external string StrRight(  string p1,  int p2 ) = "StdFunctions.dll";
+
+// Retrieves characters from the middle of a string
+external string StrMid(  string p1,  int p2,  int p3 ) = "StdFunctions.dll";
+
+// Replaces all occurences of a sub-string within a string with the specified replacement string
+external string StrReplace(  string p1,  string p2,  string p3 ) = "StdFunctions.dll";
+
+// Removes all occurences of a sub-string from within a string
+external string StrRemove(  string p1,  string p2 ) = "StdFunctions.dll";
+
+// Removes all occurences of a set of characters from within a string
+external string StrRemoveChars(  string p1,  string p2 ) = "StdFunctions.dll";
+
+// Find the location of a sub-string in a string - looking from back to front
+external int StrRFind(  string p1,  string p2 ) = "StdFunctions.dll";
+
+// Reverse a string
+external string StrReverse(  string p1 ) = "StdFunctions.dll";
+
+// Check whether the input string is numeric or not
+external boolean IsNumeric(  string p1 ) = "StdFunctions.dll";
+
+// Converts a string to its matching integer
+external int StrToInt(  string p1 ) = "StdFunctions.dll";
+
+// Converts an integer to its matching string representation
+external string IntToStr(  int p1 ) = "StdFunctions.dll";
+
+// Converts a string to its matching double precision representation
+external double StrToDbl(  string p1 ) = "StdFunctions.dll";
+
+// Converts a double to its matching string representation
+external string DblToStr(  double p1 ) = "StdFunctions.dll";
+
+// Find the location of a child string in its parent
+external int StrFind(  string p1,  string p2 ) = "StdFunctions.dll";
+
+// Retrieves the size of a string
+external int StrSize(  string p1 ) = "StdFunctions.dll";
+
+// Converts a string to upper case
+external string StrToUpper(  string p1 ) = "StdFunctions.dll";
+
+// Converts a string to lower case
+external string StrToLower(  string p1 ) = "StdFunctions.dll";
+
+// Trims the leading and trailing white space off a string
+external string StrTrim(  string p1 ) = "StdFunctions.dll";
+
+// Trims the left hand white space off a string
+external string StrTrimL(  string p1 ) = "StdFunctions.dll";
+
+// Trims the right hand white space off a string
+external string StrTrimR(  string p1 ) = "StdFunctions.dll";
+
+// Converts a double to the matching integer (truncates)
+external int DblToInt(  double p1 ) = "StdFunctions.dll";
+
+// Converts an integer to its matching double representation
+external double IntToDbl(  int p1 ) = "StdFunctions.dll";
+
+// Rounds a double to the given number of decimal places
+external double Round(  double p1,  int p2 ) = "StdFunctions.dll";
+
+// Calculate the square root of a number (double)
+external double SquareRoot(  double p1 ) = "StdFunctions.dll";
+
+// Retrieves the current date
+external string CurrentDate(  boolean p1 ) = "StdFunctions.dll";
+
+// Retrieves the current time
+external string CurrentTime(  ) = "StdFunctions.dll";
+
+// Retrieves the current date and time
+external string CurrentDateTime(  boolean p1 ) = "StdFunctions.dll";
+
+// Retrieves the current date and time in the given format
+external string FormatCurrentDateTime(  string p1 ) = "StdFunctions.dll";
+
+// Adds the given number of days to a date
+external string DateAddDays(  string p1,  int p2,  boolean p3 ) = "StdFunctions.dll";
+
+// Gives the difference in Years, Months and Days between two dates
+external string DateDifferenceAsString(  string p1,  string p2,  boolean p3 ) = "StdFunctions.dll";
+
+// Gives the difference in days between two dates
+external int DateDifferenceInDays(  string p1,  string p2,  boolean p3 ) = "StdFunctions.dll";
+
+// Retrieve the current date/time as a string that conforms to SQL Server's datetime type
+external string SQLServCurrentDateTime(  ) = "StdFunctions.dll";
+
+// Retrieve the current date/time as a string that conforms to SQL Server's smalldatetime type
+external string SQLServCurrentSmallDateTime(  ) = "StdFunctions.dll";
+
+// Converts the given date/time info to a string that conforms to SQL Server's datetime type
+external string SQLServGetDateTimeString(  int p1,  int p2,  int p3,  int p4,  int p5,  int p6,  int p7 ) = "StdFunctions.dll";
+
+// Converts the given date/time info to a string that conforms to SQL Server's smalldatetime type
+external string SQLServGetSmallDateTimeString(  int p1,  int p2,  int p3,  int p4,  int p5 ) = "StdFunctions.dll";
+
+// Formats the given date/time details
+external string FormatTime(  string p1,  int p2,  int p3,  int p4,  int p5,  int p6,  int p7,  int p8 ) = "StdFunctions.dll";
+
+// Search for the regular expression in the given string
+external int StrRegFind(  string p1,  string p2 ) = "StdFunctions.dll";
+
+// Search for the regular expression in the given string
+external int StrRegFindFromPos(  string p1,  string p2,  int p3, -> int p4 ) = "StdFunctions.dll";
+
+// Retrieve a specific string value from a .ini file
+external boolean GetINIString(  string p1,  string p2,  string p3, -> string p4 ) = "StdFunctions.dll";
+
+// Retrieve a specific int value from a .ini file
+external boolean GetINIInt(  string p1,  string p2,  string p3, -> int p4 ) = "StdFunctions.dll";
+
+// Retrieve a specific boolean value from a .ini file
+external boolean GetINIBoolean(  string p1,  string p2,  string p3, -> boolean p4 ) = "StdFunctions.dll";
+
+// Retrieve a specific double value from a .ini file
+external boolean GetINIDouble(  string p1,  string p2,  string p3, -> double p4 ) = "StdFunctions.dll";
+
+// Look up the input in a translation file, and update the output variable
+external string DataMap(  string p1, -> string p2,  string p3,  string p4,  string p5 ) = "StdFunctions.dll";
+
+// Look up the input in a translation file, and update the output variable
+external string DataMapColumns(  string p1, -> string p2,  int p3,  int p4,  string p5,  string p6,  string p7 ) = "StdFunctions.dll";
+
+// Create a Universally Unique Identifier (UUID). For example, "de6a80c7-4211-4f92-8fa9-3d336c3b0e2e".
+external string CreateUUID(  ) = "StdFunctions.dll";
+
+// Convert a date from one format to another using Java's SimpleDateFormat format strings.
+external string DateChangeFormat(  string p1,  string p2,  string p3 ) = "StdFunctions.dll";
+
+// Add leading padding to bring the text up to the required length. The padding string must only contain one character.
+external string StrPadLeft(  string p1,  int p2,  string p3 ) = "StdFunctions.dll";
+
+// Add trailing padding to bring the text up to the required length. The padding string must only contain one character.
+external string StrPadRight(  string p1,  int p2,  string p3 ) = "StdFunctions.dll";
+
+// Add leading zeros to bring the text up to the required length.
+external string StrZeroPad(  string p1,  int p2 ) = "StdFunctions.dll";
+
+// Removes any padding characters from both ends of the string.
+external string StrTrimChars(  string p1,  string p2 ) = "StdFunctions.dll";
+
+// Removes any padding characters from left hand side of the string.
+external string StrTrimLeftChars(  string p1,  string p2 ) = "StdFunctions.dll";
+
+// Removes any padding characters from right hand side of the string.
+external string StrTrimRightChars(  string p1,  string p2 ) = "StdFunctions.dll";
+
+// Removes any zero characters from left hand side of the string.
+external string StrTrimZeroPadding(  string p1 ) = "StdFunctions.dll";
+
+// Remove non-letters from the string.
+external string StrLetters(  string p1 ) = "StdFunctions.dll";
+
+// Remove the non-numbers from the string.
+external string StrNumbers(  string p1 ) = "StdFunctions.dll";
+
+// Create a separated list of letter sequences.
+external string StrLettersList(  string p1,  string p2 ) = "StdFunctions.dll";
+
+// Create a separated list of number sequences.
+external string StrNumbersList(  string p1,  string p2 ) = "StdFunctions.dll";
+
+// Count the number of separated fields.
+external int StrFieldCount(  string p1,  string p2 ) = "StdFunctions.dll";
+
+// Extract the text of a specific separated field. Field numbers start from one.
+external string StrFieldExtract(  string p1,  string p2,  int p3 ) = "StdFunctions.dll";
+
+// Access a Rhapsody table for code lookup and translation
+external boolean RhapsodyTableLookup( -> string p1,  string p2,  string p3,  string p4,  string p5,  string p6 ) = "StdFunctions.dll";
+
+//////////////////////////////////////////////
+//	GLOBALS
+//////////////////////////////////////////////
+
+// Insert global declarations here...
+// global string gbStr = "My Global String"
+
+global string LIMS="VetView";
+global string Local_OID="2.16.840.1.113883.3.5.1.6";
+global string NAIS_ID="00EN7RT";
+global string MessageStatus="D";
+global string NAHLN_OID="2.16.840.1.113883.3.5.14.1.1";
+global string NAHLN_NAIS_ID="0034P2K";
+global string CSF_OID="2.16.840.1.113883.3.5.8.3";
+global string received_date;
+global string finalized_date;
+global string acc_ref_no;
+global string MessageID;
+
+//////////////////////////////////////////////
+//	PROCEDURES
+//////////////////////////////////////////////
+
+// Main procedure for Mapping from message to OPU_R25
+map mainmessage( <- Input::message in, -> Output::OPU_R25 out )
+{
+	received_date=in.accession_header.RECEIVED_DATE.#PCDATA;
+	finalized_date=in.accession_header.FINALIZED_DATE.#PCDATA;
+	acc_ref_no=in.accession_header.ACC_REF_NO.#PCDATA;
+	
+	MapMSH(out.MSH);
+	MapPV1(in, out.PV1);
+	MapOBX(out.OBX[0]);	
+	MapROL(in, out.ROL[0]);
+	
+	for(int i=0; i<sizeof(in.accession_header.patients); i=i+1)
+	{
+		MapAccessionDetail(in, out.OPU_R25^ACCESSION_DETAIL[i], i);	
+	}	
+}
+
+
+map MapMSH( -> Output::LocalComplex#1 msh )
+{
+	msh.MSH^1.#PCDATA="|";
+	msh.MSH^2.#PCDATA = "^~\\&";
+	msh.MSH^3.HD^1.#PCDATA=LIMS;
+	msh.MSH^3.HD^2.#PCDATA=Local_OID;
+	msh.MSH^3.HD^3.#PCDATA="ISO";	
+	msh.MSH^4.HD^1.#PCDATA = NAIS_ID ;
+	msh.MSH^4.HD^2.#PCDATA = "2.16.840.1.113883.3.5.6.1.1" ;  // NAIS Premise ID OID
+	msh.MSH^4.HD^3.#PCDATA = "ISO" ;	
+	msh.MSH^5.HD^1.#PCDATA = "NAHLN Database" ;
+	msh.MSH^5.HD^2.#PCDATA = NAHLN_OID; // NAHLN OID
+	msh.MSH^5.HD^3.#PCDATA = "ISO" ;
+	msh.MSH^6.HD^1.#PCDATA = NAHLN_NAIS_ID ;
+	msh.MSH^6.HD^2.#PCDATA = NAHLN_OID ;
+	msh.MSH^6.HD^3.#PCDATA = "ISO" ;
+	msh.MSH^7.#PCDATA = FormatCurrentDateTime( "%Y%m%d%H%M%S" ) + "-0500";
+	msh.MSH^9.MSG^1.#PCDATA = "OPU" ;
+	msh.MSH^9.MSG^2.#PCDATA = "R25" ;
+	msh.MSH^9.MSG^3.#PCDATA = "OPU_R25" ;
+	msh.MSH^10.#PCDATA =MessageID;	
+	msh.MSH^11.PT^1.#PCDATA = MessageStatus ;
+	msh.MSH^12.VID^1.#PCDATA = "2.6" ;
+	msh.MSH^21.EI^1.#PCDATA = "NAHLNOPU3.0" ;
+	msh.MSH^21.EI^3.#PCDATA = "2.16.840.1.113883.3.5.9" ;  // AAVLD Message Profile OID
+	msh.MSH^21.EI^4.#PCDATA = "ISO" ;	
+}
+
+
+map MapPV1( <- Input::message in, -> Output::LocalComplex#10 pv1 )
+{	
+	pv1.PV1^2.#PCDATA="C";	
+	if (exists(in.accession_header.CASE_COORDINATOR_ID.#PCDATA))
+	{
+		pv1.PV1^7.XCN^1.#PCDATA =in.accession_header.case_coordinator.EMP_ID.#PCDATA;
+		pv1.PV1^7.XCN^2.FN^1.#PCDATA =in.accession_header.case_coordinator.LAST_NAME.#PCDATA;
+		pv1.PV1^7.XCN^3.#PCDATA =in.accession_header.case_coordinator.FIRST_NAME.#PCDATA;
+		pv1.PV1^7.XCN^9.HD^2.#PCDATA = Local_OID ;
+		pv1.PV1^7.XCN^9.HD^3.#PCDATA = "ISO" ;
+	}
+	pv1.PV1^19.CX^1.#PCDATA=in.accession_header.ACCESSION_NO.#PCDATA;
+	pv1.PV1^19.CX^4.HD^2.#PCDATA=Local_OID;
+	pv1.PV1^19.CX^4.HD^3.#PCDATA="ISO";
+	pv1.PV1^51.#PCDATA="V";
+}
+
+
+map MapOBX( -> Output::VISIT^OBX obx )
+{
+	obx.OBX^2.#PCDATA = "CWE" ;
+	obx.OBX^3.CWE^1.#PCDATA = "29298-7" ;
+	obx.OBX^3.CWE^2.#PCDATA = "Reason of Visit" ;
+	obx.OBX^3.CWE^3.#PCDATA = "LN" ;
+	obx.OBX^5.CWE^1.#PCDATA = "N" ;
+	obx.OBX^5.CWE^2.#PCDATA = "Surveillience" ;
+	obx.OBX^5.CWE^3.#PCDATA = "L" ;
+	obx.OBX^11.#PCDATA = "F" ;
+
+}
+
+
+map MapROL( <- Input::message in, -> Output::LocalComplex#18 rol )
+{	
+	if(exists(in.accession_header.submitter_information.SUBMITTER_LAST_NAME.#PCDATA))
+	{
+		rol.ROL^2.#PCDATA ="UC" ;
+		rol.ROL^3.CWE^1.#PCDATA= "SUB" ;
+		rol.ROL^3.CWE^1.#PCDATA = "Submitter" ;
+		rol.ROL^3.CWE^1.#PCDATA = "HL70443" ;
+				
+		rol.ROL^4.XCN^1.#PCDATA=in.accession_header.submitter_information.SUBMITTER_FIRST_NAME.#PCDATA + " " + in.accession_header.submitter_information.SUBMITTER_LAST_NAME.#PCDATA;
+		rol.ROL^4.XCN^2.FN^1.#PCDATA=in.accession_header.submitter_information.SUBMITTER_LAST_NAME.#PCDATA;
+		rol.ROL^4.XCN^3.#PCDATA=in.accession_header.submitter_information.SUBMITTER_FIRST_NAME.#PCDATA;
+		rol.ROL^4.XCN^9.HD^2.#PCDATA = Local_OID ;
+		rol.ROL^4.XCN^9.HD^3.#PCDATA = "ISO" ;				
+	}
+
+}
+
+
+map MapAccessionDetail( <- Input::message in, -> Output::LocalComplex#29 details, <- int DetailsCount )
+{	
+	MapNK1(in.accession_header.client_information, details.NK1);	
+	MapPatients(in.accession_header.patients[DetailsCount], details.OPU_R25^PATIENT);	
+	MapSpecimens(in.accession_header.patients[DetailsCount].specimen_information, details.OPU_R25^SPECIMEN[0]);	
+}
+
+
+map MapNK1( <- Input::LocalComplex#4 in, -> Output::LocalComplex#30 nk1 )
+{
+	nk1.NK1^1.#PCDATA=1;	
+	nk1.NK1^2.XPN^1.FN^1.#PCDATA=in.CLIENT_ID.#PCDATA;
+	nk1.NK1^3.CWE^1.#PCDATA="OWN" ;
+	nk1.NK1^3.CWE^2.#PCDATA="Owner";
+	nk1.NK1^3.CWE^3.#PCDATA="HL70063";	
+	nk1.NK1^4.XAD^1.SAD^1.#PCDATA=in.ADDR_LN1.#PCDATA;
+	nk1.NK1^4.XAD^3.#PCDATA=in.CITY_NAME.#PCDATA;
+	nk1.NK1^4.XAD^4.#PCDATA=in.STATE.#PCDATA;
+	nk1.NK1^4.XAD^5.#PCDATA=in.ZIP.#PCDATA;
+}
+
+
+map MapPatients( <- Input::LocalComplex#6 patient, -> Output::LocalComplex#40 out )
+{
+	out.PID.PID^3[0].CX^1.#PCDATA=patient.ANIMAL_ID.#PCDATA;
+	out.PID.PID^3[0].CX^4.HD^2.#PCDATA=Local_OID;
+	out.PID.PID^3[0].CX^4.HD^3.#PCDATA="ISO";
+	out.PID.PID^3[0].CX^5.#PCDATA="TAG";
+	out.PID.PID^5.XPN^1.FN^1.#PCDATA="NOT PROVIDED";	
+	
+	if (!isempty(patient.SEX_SNOMED.#PCDATA))
+	{
+		out.PID.PID^8.#PCDATA=patient.SEX_SNOMED.#PCDATA;
+	}
+	else
+	{
+		// Unknown because out sex isn't snomed in VetView
+		out.PID.PID^8.#PCDATA="U";
+	}
+	
+	out.PID.PID^30.#PCDATA="Y";	
+	out.PID.PID^35.CWE^1.#PCDATA=patient.BREED_SNOMED.#PCDATA;
+	out.PID.PID^35.CWE^2.#PCDATA=patient.BREED.#PCDATA;
+	out.PID.PID^35.CWE^3.#PCDATA="SCT";	
+	out.PID.PID^38.CWE^1.#PCDATA="U";
+	out.PID.PID^38.CWE^2.#PCDATA="Unknwon";
+	out.PID.PID^38.CWE^3.#PCDATA="HL70429";	
+}
+
+
+map MapSpecimens( <- Input::LocalComplex#7 in, -> Output::LocalComplex#55 specimen )
+{
+	specimen.SPM.SPM^2.EIP^1.EI^1.#PCDATA=in.ANIMAL_ID.#PCDATA;
+	specimen.SPM.SPM^2.EIP^1.EI^2.#PCDATA="NAHLN_CSF";
+	specimen.SPM.SPM^2.EIP^1.EI^3.#PCDATA=CSF_OID;
+	specimen.SPM.SPM^2.EIP^1.EI^4.#PCDATA="ISO";
+	
+	specimen.SPM.SPM^2.EIP^2.EI^1.#PCDATA=in.SPECIMEN_ID.#PCDATA;
+	specimen.SPM.SPM^2.EIP^2.EI^3.#PCDATA=Local_OID;
+	specimen.SPM.SPM^2.EIP^2.EI^4.#PCDATA="ISO";
+	
+	// We do not have our specimen codes snomeded
+	specimen.SPM.SPM^4.CWE^1.#PCDATA=in.SPECIMEN_CODE.#PCDATA;
+	specimen.SPM.SPM^4.CWE^2.#PCDATA=in.DESCRIPTION.#PCDATA;
+	specimen.SPM.SPM^4.CWE^3.#PCDATA="L";
+
+	specimen.SPM.SPM^11.CWE^1.#PCDATA="P";
+	specimen.SPM.SPM^11.CWE^2.#PCDATA="Patient";
+	specimen.SPM.SPM^11.CWE^3.#PCDATA="HL70369";
+				
+	specimen.SPM.SPM^17.DR^1.#PCDATA=in.SAMPLED_DATE.#PCDATA + "-0500";
+	specimen.SPM.SPM^18.#PCDATA=received_date +"-0500";	
+	
+	specimen.SPM.SPM^23.CWE^1.#PCDATA="A";
+	specimen.SPM.SPM^23.CWE^2.#PCDATA="Appropriate";
+	specimen.SPM.SPM^23.CWE^3.#PCDATA="HL70492";
+	
+	//Call Order -- Since CSF, only one order, call just once	
+	
+	//Do a search to get the CT and SNOMED values	
+	int ctValue=0;
+	string interpretedValue="Negative";	
+	for(int x=0; x<sizeof(in.tests.observations); x=x+1)
+	{
+		if(in.tests.observations[x].RESULT_NAME.#PCDATA=="CT Value")
+		{
+			ctValue=1;
+		}
+		if(in.tests.observations[x].RESULT_NAME.#PCDATA=="Regulatory")
+		{
+			interpretedValue=in.tests.observations[x].RESULT_VALUE.#PCDATA;
+		}		
+	}
+	
+	MapOrderResults(in.tests, specimen.OPU_R25^ORDER[0], interpretedValue, ctValue);	
+}
+
+
+map MapOrderResults( <- Input::LocalComplex#8 in, -> Output::LocalComplex#76 out, <- string InterpretedResult, <- int CTValue )
+{
+	// TO DO:  Handle Case Coordinator
+	
+	out.OBR.OBR^3.EI^1.#PCDATA=in.SPECIMEN_ID.#PCDATA;
+	out.OBR.OBR^3.EI^3.#PCDATA=Local_OID;
+	out.OBR.OBR^3.EI^4.#PCDATA="ISO";
+	
+	out.OBR.OBR^4.CWE^1.#PCDATA=in.STANDARD_CODE.#PCDATA;
+	out.OBR.OBR^4.CWE^2.#PCDATA=in.TEST_CODE.#PCDATA;
+	out.OBR.OBR^4.CWE^3.#PCDATA="LN";
+	
+	out.OBR.OBR^22.#PCDATA=finalized_date + "-0500";
+	out.ORC.ORC^1.#PCDATA="NW";
+	
+	//Handle reference case number
+	out.ORC.ORC^4.EI^1.#PCDATA=acc_ref_no;
+	out.ORC.ORC^4.EI^3.#PCDATA=CSF_OID;
+	out.ORC.ORC^4.EI^4.#PCDATA="ISO";	
+	out.ORC.ORC^5.#PCDATA="CM";
+	
+	//Finalized Date
+	out.ORC.ORC^9.#PCDATA=finalized_date + "-0500";
+	
+	//Case Coordinator
+	//out.ORC.ORC^11.XCN^1.#PCDATA=in.Accession_Information.CASE_COORDINATOR_ID.#PCDATA;
+	//out.ORC.ORC^11.XCN^2.FN^1.#PCDATA=in.Accession_Information.COORDINATOR_LAST_NAME.#PCDATA;
+	//out.ORC.ORC^11.XCN^3.#PCDATA=in.Accession_Information.COORDINATOR_FIRST_NAME.#PCDATA;
+	//out.ORC.ORC^11.XCN^9.HD^2.#PCDATA=Local_OID;
+	//out.ORC.ORC^11.XCN^9.HD^3.#PCDATA="ISO";
+	
+	out.OPU_R25^RESULT.OBX.OBX^2.#PCDATA="NM";
+	
+	out.OPU_R25^RESULT.OBX.OBX^3.CWE^1.#PCDATA=in.STANDARD_CODE.#PCDATA;	
+	out.OPU_R25^RESULT.OBX.OBX^3.CWE^2.#PCDATA=in.DESCRIPTION.#PCDATA;
+	out.OPU_R25^RESULT.OBX.OBX^3.CWE^3.#PCDATA="LN";
+	out.OPU_R25^RESULT.OBX.OBX^4.#PCDATA="1";
+	
+	//Result Fields 
+	out.OPU_R25^RESULT.OBX.OBX^5.#PCDATA=CTValue;
+	out.OPU_R25^RESULT.OBX.OBX^8.#PCDATA=InterpretedResult;
+	
+	out.OPU_R25^RESULT.OBX.OBX^17.CWE^1.#PCDATA="2.16.840.1.113883.3.5.1.7.8.1.3.1.2.1.4.1.1";
+	out.OPU_R25^RESULT.OBX.OBX^17.CWE^2.#PCDATA="CSF- RRT PCR - Smart Cycler - GeneAmp - Manual - Qiagen RNeasy";
+	out.OPU_R25^RESULT.OBX.OBX^17.CWE^3.#PCDATA="ISO";
+	
+}
+
+

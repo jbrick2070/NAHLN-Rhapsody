@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="message">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accession_header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="DATE_KEY" type="xs:string" />
+              <xs:element minOccurs="0" name="FINALIZED_DATE" type="xs:string" />
+              <xs:element minOccurs="0" name="CASE_COORDINATOR_ID" type="xs:string" />
+              <xs:element minOccurs="0" name="RECEIVED_DATE" type="xs:string" />
+              <xs:element minOccurs="0" name="ACCESSION_ID" type="xs:string" />
+              <xs:element minOccurs="0" name="ACC_REF_NO">
+                <xs:complexType>
+                  <xs:attribute name="null" type="xs:string" use="optional" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ACCESSION_NO" type="xs:string" />
+              <xs:element minOccurs="0" name="case_coordinator">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="FIRST_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" name="MIDDLE_NAME">
+                      <xs:complexType>
+                        <xs:attribute name="null" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="EMP_ID" type="xs:string" />
+                    <xs:element minOccurs="0" name="LAST_NAME" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="submitter_information">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="SUBMITTER_LAST_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" name="SUBMITTER_FIRST_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" name="SUBMITTER_MIDDLE_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" name="SUBMITTER_TITLE" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="client_information">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="ZIP" type="xs:string" />
+                    <xs:element minOccurs="0" name="CITY_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" name="BUSINESS_FARM_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" name="BILL_YN" type="xs:string" />
+                    <xs:element minOccurs="0" name="STATE" type="xs:string" />
+                    <xs:element minOccurs="0" name="ADDR_TYPE" type="xs:string" />
+                    <xs:element minOccurs="0" name="TYPE_CONTACT" type="xs:string" />
+                    <xs:element minOccurs="0" name="COUNTRY_NAME">
+                      <xs:complexType>
+                        <xs:attribute name="null" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="FIRST_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" name="TITLE" type="xs:string" />
+                    <xs:element minOccurs="0" name="ADDR_LN2" type="xs:string" />
+                    <xs:element minOccurs="0" name="ADDR_LN1" type="xs:string" />
+                    <xs:element minOccurs="0" name="ACCESSION_CONTACT_ID" type="xs:string" />
+                    <xs:element minOccurs="0" name="LAST_NAME" type="xs:string" />
+                    <xs:element minOccurs="0" name="CLIENT_ID" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="client_phone">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="CONTACT_TYPE" type="xs:string" />
+                          <xs:element minOccurs="0" name="CONTACT_VALUE" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="patients">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="STATUS_CODE">
+                      <xs:complexType>
+                        <xs:attribute name="null" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="BREED" type="xs:string" />
+                    <xs:element minOccurs="0" name="REF_CASE_NO">
+                      <xs:complexType>
+                        <xs:attribute name="null" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="SEX">
+                      <xs:complexType>
+                        <xs:attribute name="null" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="SPECIES_SNOMED">
+                      <xs:complexType>
+                        <xs:attribute name="null" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="SPECIES" type="xs:string" />
+                    <xs:element minOccurs="0" name="SEX_SNOMED">
+                      <xs:complexType>
+                        <xs:attribute name="null" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="BREED_SNOMED" type="xs:string" />
+                    <xs:element minOccurs="0" name="PATIENT_ID" type="xs:string" />
+                    <xs:element minOccurs="0" name="ACCESSION_ID" type="xs:string" />
+                    <xs:element minOccurs="0" name="ANIMAL_ID" type="xs:string" />
+                    <xs:element minOccurs="0" name="specimen_information">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="SAMPLED_DATE" type="xs:string" />
+                          <xs:element minOccurs="0" name="SPECIMEN_ID" type="xs:string" />
+                          <xs:element minOccurs="0" name="DESCRIPTION" type="xs:string" />
+                          <xs:element minOccurs="0" name="SPECIMEN_CODE" type="xs:string" />
+                          <xs:element minOccurs="0" name="TEST_TUBE_NO" type="xs:string" />
+                          <xs:element minOccurs="0" name="PATIENT_ID" type="xs:string" />
+                          <xs:element minOccurs="0" name="SPECIMEN_SNOMED" type="xs:string" />
+                          <xs:element minOccurs="0" name="ANIMAL_ID" type="xs:string" />
+                          <xs:element minOccurs="0" name="tests">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" name="SPECIMEN_ID" type="xs:string" />
+                                <xs:element minOccurs="0" name="STATUS_CODE" type="xs:string" />
+                                <xs:element minOccurs="0" name="STANDARD_CODE" type="xs:string" />
+                                <xs:element minOccurs="0" name="TEST_CODE" type="xs:string" />
+                                <xs:element minOccurs="0" name="DESCRIPTION" type="xs:string" />
+                                <xs:element minOccurs="0" name="SECTION_ID" type="xs:string" />
+                                <xs:element minOccurs="0" name="TEST_ID" type="xs:string" />
+                                <xs:element minOccurs="0" name="SECTION_NAME" type="xs:string" />
+                                <xs:element minOccurs="0" maxOccurs="unbounded" name="observations">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element minOccurs="0" name="RESULT_TYPE" type="xs:string" />
+                                      <xs:element minOccurs="0" name="STANDARD_CODE">
+                                        <xs:complexType>
+                                          <xs:attribute name="null" type="xs:string" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="RESULT_NAME" type="xs:string" />
+                                      <xs:element minOccurs="0" name="TEST_CODE" type="xs:string" />
+                                      <xs:element minOccurs="0" name="RESULT_ID" type="xs:string" />
+                                      <xs:element minOccurs="0" name="RESULT_VALUE">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute name="null" type="xs:string" use="optional" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element minOccurs="0" name="DESCRIPTION" type="xs:string" />
+                                      <xs:element minOccurs="0" name="RESULT_SEQ" type="xs:string" />
+                                      <xs:element minOccurs="0" name="TEST_CODE_ID" type="xs:string" />
+                                      <xs:element minOccurs="0" name="RESULT_STATUS" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

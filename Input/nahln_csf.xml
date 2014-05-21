@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message>
+    <accession_header>
+        <DATE_KEY>2013-05-17 12:42:37.980000</DATE_KEY>
+        <FINALIZED_DATE>20130517124237</FINALIZED_DATE>
+        <CASE_COORDINATOR_ID null="yes"/>
+        <RECEIVED_DATE>20130517120000</RECEIVED_DATE>
+        <ACCESSION_ID>21837386</ACCESSION_ID>
+        <ACC_REF_NO>123456</ACC_REF_NO>
+        <ACCESSION_NO>A14-00016</ACCESSION_NO>
+        <submitter_information>
+            <SUBMITTER_LAST_NAME> DUGGAN</SUBMITTER_LAST_NAME>
+            <SUBMITTER_FIRST_NAME>EMILY</SUBMITTER_FIRST_NAME>
+            <SUBMITTER_MIDDLE_NAME>S</SUBMITTER_MIDDLE_NAME>
+            <SUBMITTER_TITLE>DR</SUBMITTER_TITLE>
+        </submitter_information>
+        <client_information>
+            <ZIP>14456</ZIP>
+            <CITY_NAME>Geneva</CITY_NAME>
+            <BUSINESS_FARM_NAME>KESECA VET CLINIC P L L C</BUSINESS_FARM_NAME>
+            <BILL_YN>Y</BILL_YN>
+            <STATE>NY</STATE>
+            <ADDR_TYPE>Mailing</ADDR_TYPE>
+            <TYPE_CONTACT>Clinic</TYPE_CONTACT>
+            <COUNTRY_NAME null="yes"/>
+            <FIRST_NAME>BRENDA</FIRST_NAME>
+            <TITLE>DR</TITLE>
+            <ADDR_LN2>PO BOX 267</ADDR_LN2>
+            <ADDR_LN1>1441 ROUTE 5 AND 20</ADDR_LN1>
+            <ACCESSION_CONTACT_ID>120</ACCESSION_CONTACT_ID>
+            <LAST_NAME>CARTER</LAST_NAME>
+            <CLIENT_ID>1185</CLIENT_ID>
+            <client_phone>
+                <CONTACT_TYPE>Fax</CONTACT_TYPE>
+                <CONTACT_VALUE>3157811324</CONTACT_VALUE>
+            </client_phone>
+            <client_phone>
+                <CONTACT_TYPE>Work Phone</CONTACT_TYPE>
+                <CONTACT_VALUE>3157811378</CONTACT_VALUE>
+            </client_phone>
+            <client_phone>
+                <CONTACT_TYPE>Email</CONTACT_TYPE>
+                <CONTACT_VALUE>KESECA@ROCHESTER.RR.COM</CONTACT_VALUE>
+            </client_phone>
+        </client_information>
+        <patients>
+            <STATUS_CODE null="yes"/>
+            <BREED>Boar Power</BREED>
+            <REF_CASE_NO>123456</REF_CASE_NO>
+            <SEX>Female</SEX>
+            <SPECIES_SNOMED null="yes"/>
+            <SPECIES>Porcine</SPECIES>
+            <SEX_SNOMED>F</SEX_SNOMED>
+            <BREED_SNOMED>74899005</BREED_SNOMED>
+            <PATIENT_ID>269</PATIENT_ID>
+            <ACCESSION_ID>21837386</ACCESSION_ID>
+            <ANIMAL_ID>pig1</ANIMAL_ID>
+            <specimen_information>
+                <SAMPLED_DATE>2013-05-17</SAMPLED_DATE>
+                <SPECIMEN_ID>269</SPECIMEN_ID>
+                <DESCRIPTION>Tonsil</DESCRIPTION>
+                <SPECIMEN_CODE>TON</SPECIMEN_CODE>
+                <TEST_TUBE_NO null="yes"/>
+                <PATIENT_ID>269</PATIENT_ID>
+                <SPECIMEN_SNOMED>4241000009102</SPECIMEN_SNOMED>
+                <tests>
+                    <SPECIMEN_ID>269</SPECIMEN_ID>
+                    <STATUS_CODE>Finalized</STATUS_CODE>
+                    <STANDARD_CODE>44273-1</STANDARD_CODE>
+                    <TEST_CODE>CSFPCR</TEST_CODE>
+                    <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                    <SECTION_ID>8</SECTION_ID>
+                    <TEST_ID>309</TEST_ID>
+                    <SECTION_NAME>Molecular Diagnostics</SECTION_NAME>
+                    <observations>
+                        <RESULT_TYPE>Rich Text</RESULT_TYPE>
+                        <STANDARD_CODE null="yes"/>
+                        <RESULT_NAME>Lab Comments</RESULT_NAME>
+                        <TEST_CODE>CSFPCR</TEST_CODE>
+                        <RESULT_ID>2312</RESULT_ID>
+                        <RESULT_VALUE null="yes"/>
+                        <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                        <RESULT_SEQ>97</RESULT_SEQ>
+                        <TEST_CODE_ID>309</TEST_CODE_ID>
+                        <RESULT_STATUS>Finalized</RESULT_STATUS>
+                    </observations>
+                    <observations>
+                        <RESULT_TYPE>Rich Text</RESULT_TYPE>
+                        <STANDARD_CODE null="yes"/>
+                        <RESULT_NAME>Comments</RESULT_NAME>
+                        <TEST_CODE>CSFPCR</TEST_CODE>
+                        <RESULT_ID>2313</RESULT_ID>
+                        <RESULT_VALUE null="yes"/>
+                        <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                        <RESULT_SEQ>96</RESULT_SEQ>
+                        <TEST_CODE_ID>309</TEST_CODE_ID>
+                        <RESULT_STATUS>Finalized</RESULT_STATUS>
+                    </observations>
+                    <observations>
+                        <RESULT_TYPE>Value List</RESULT_TYPE>
+                        <STANDARD_CODE null="yes"/>
+                        <RESULT_NAME>Regulatory</RESULT_NAME>
+                        <TEST_CODE>CSFPCR</TEST_CODE>
+                        <RESULT_ID>2314</RESULT_ID>
+                        <RESULT_VALUE>Negative</RESULT_VALUE>
+                        <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                        <RESULT_SEQ>40</RESULT_SEQ>
+                        <TEST_CODE_ID>309</TEST_CODE_ID>
+                        <RESULT_STATUS>Finalized</RESULT_STATUS>
+                    </observations>
+                </tests>
+            </specimen_information>
+            <specimen_information>
+                <SAMPLED_DATE>2013-05-17</SAMPLED_DATE>
+                <SPECIMEN_ID>271</SPECIMEN_ID>
+                <DESCRIPTION>Tonsil</DESCRIPTION>
+                <SPECIMEN_CODE>TON</SPECIMEN_CODE>
+                <TEST_TUBE_NO>123456</TEST_TUBE_NO>
+                <PATIENT_ID>269</PATIENT_ID>
+                <SPECIMEN_SNOMED>4241000009102</SPECIMEN_SNOMED>
+                <tests>
+                    <SPECIMEN_ID>271</SPECIMEN_ID>
+                    <STATUS_CODE>Finalized</STATUS_CODE>
+                    <STANDARD_CODE>44273-1</STANDARD_CODE>
+                    <TEST_CODE>CSFPCR</TEST_CODE>
+                    <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                    <SECTION_ID>8</SECTION_ID>
+                    <TEST_ID>311</TEST_ID>
+                    <SECTION_NAME>Molecular Diagnostics</SECTION_NAME>
+                    <observations>
+                        <RESULT_TYPE>Rich Text</RESULT_TYPE>
+                        <STANDARD_CODE null="yes"/>
+                        <RESULT_NAME>Lab Comments</RESULT_NAME>
+                        <TEST_CODE>CSFPCR</TEST_CODE>
+                        <RESULT_ID>2309</RESULT_ID>
+                        <RESULT_VALUE null="yes"/>
+                        <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                        <RESULT_SEQ>97</RESULT_SEQ>
+                        <TEST_CODE_ID>311</TEST_CODE_ID>
+                        <RESULT_STATUS>Finalized</RESULT_STATUS>
+                    </observations>
+                    <observations>
+                        <RESULT_TYPE>Rich Text</RESULT_TYPE>
+                        <STANDARD_CODE null="yes"/>
+                        <RESULT_NAME>Comments</RESULT_NAME>
+                        <TEST_CODE>CSFPCR</TEST_CODE>
+                        <RESULT_ID>2310</RESULT_ID>
+                        <RESULT_VALUE null="yes"/>
+                        <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                        <RESULT_SEQ>96</RESULT_SEQ>
+                        <TEST_CODE_ID>311</TEST_CODE_ID>
+                        <RESULT_STATUS>Finalized</RESULT_STATUS>
+                    </observations>
+                    <observations>
+                        <RESULT_TYPE>Value List</RESULT_TYPE>
+                        <STANDARD_CODE null="yes"/>
+                        <RESULT_NAME>Regulatory</RESULT_NAME>
+                        <TEST_CODE>CSFPCR</TEST_CODE>
+                        <RESULT_ID>2311</RESULT_ID>
+                        <RESULT_VALUE>Negative</RESULT_VALUE>
+                        <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                        <RESULT_SEQ>40</RESULT_SEQ>
+                        <TEST_CODE_ID>311</TEST_CODE_ID>
+                        <RESULT_STATUS>Finalized</RESULT_STATUS>
+                    </observations>
+                </tests>
+            </specimen_information>
+        </patients>
+        <patients>
+            <STATUS_CODE null="yes"/>
+            <BREED>Boar Power</BREED>
+            <REF_CASE_NO>123456</REF_CASE_NO>
+            <SEX>Female</SEX>
+            <SPECIES_SNOMED null="yes"/>
+            <SPECIES>Porcine</SPECIES>
+            <SEX_SNOMED>F</SEX_SNOMED>
+            <BREED_SNOMED>74899005</BREED_SNOMED>
+            <PATIENT_ID>270</PATIENT_ID>
+            <ACCESSION_ID>21837386</ACCESSION_ID>
+            <ANIMAL_ID>pig11</ANIMAL_ID>
+            <specimen_information>
+                <SAMPLED_DATE>2013-05-17</SAMPLED_DATE>
+                <SPECIMEN_ID>270</SPECIMEN_ID>
+                <DESCRIPTION>Tonsil</DESCRIPTION>
+                <SPECIMEN_CODE>TON</SPECIMEN_CODE>
+                <TEST_TUBE_NO>1</TEST_TUBE_NO>
+                <PATIENT_ID>270</PATIENT_ID>
+                <SPECIMEN_SNOMED>4241000009102</SPECIMEN_SNOMED>
+                <tests>
+                    <SPECIMEN_ID>270</SPECIMEN_ID>
+                    <STATUS_CODE>Finalized</STATUS_CODE>
+                    <STANDARD_CODE>44273-1</STANDARD_CODE>
+                    <TEST_CODE>CSFPCR</TEST_CODE>
+                    <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                    <SECTION_ID>8</SECTION_ID>
+                    <TEST_ID>310</TEST_ID>
+                    <SECTION_NAME>Molecular Diagnostics</SECTION_NAME>
+                    <observations>
+                        <RESULT_TYPE>Rich Text</RESULT_TYPE>
+                        <STANDARD_CODE null="yes"/>
+                        <RESULT_NAME>Lab Comments</RESULT_NAME>
+                        <TEST_CODE>CSFPCR</TEST_CODE>
+                        <RESULT_ID>2306</RESULT_ID>
+                        <RESULT_VALUE null="yes"/>
+                        <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                        <RESULT_SEQ>97</RESULT_SEQ>
+                        <TEST_CODE_ID>310</TEST_CODE_ID>
+                        <RESULT_STATUS>Finalized</RESULT_STATUS>
+                    </observations>
+                    <observations>
+                        <RESULT_TYPE>Rich Text</RESULT_TYPE>
+                        <STANDARD_CODE null="yes"/>
+                        <RESULT_NAME>Comments</RESULT_NAME>
+                        <TEST_CODE>CSFPCR</TEST_CODE>
+                        <RESULT_ID>2307</RESULT_ID>
+                        <RESULT_VALUE null="yes"/>
+                        <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                        <RESULT_SEQ>96</RESULT_SEQ>
+                        <TEST_CODE_ID>310</TEST_CODE_ID>
+                        <RESULT_STATUS>Finalized</RESULT_STATUS>
+                    </observations>
+                    <observations>
+                        <RESULT_TYPE>Value List</RESULT_TYPE>
+                        <STANDARD_CODE null="yes"/>
+                        <RESULT_NAME>Regulatory</RESULT_NAME>
+                        <TEST_CODE>CSFPCR</TEST_CODE>
+                        <RESULT_ID>2308</RESULT_ID>
+                        <RESULT_VALUE>Negative</RESULT_VALUE>
+                        <DESCRIPTION>Classical Swine Fever Pcr</DESCRIPTION>
+                        <RESULT_SEQ>40</RESULT_SEQ>
+                        <TEST_CODE_ID>310</TEST_CODE_ID>
+                        <RESULT_STATUS>Finalized</RESULT_STATUS>
+                    </observations>
+                </tests>
+            </specimen_information>
+        </patients>
+    </accession_header>
+</message>

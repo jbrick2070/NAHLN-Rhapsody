@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smeg:SmegUIOptions xmlns:smeg="urn:com.orionhealth/Symphonia/SmegOptions" version="1" smegVersion="3.8.10.69636">
+	<Folders/>
+	<Breakpoints/>
+	<OpenWindows activeWindow="MapMSH">
+		<Window name="MapMSH"/>
+		<Window name="mainmessage"/>
+		<Window name="Declarations"/>
+	</OpenWindows>
+	<ErrorRules/>
+	<WatchVariables>
+		<WatchWindow windowNumber="1"/>
+		<WatchWindow windowNumber="2"/>
+		<WatchWindow windowNumber="3"/>
+		<WatchWindow windowNumber="4"/>
+	</WatchVariables>
+</smeg:SmegUIOptions>
